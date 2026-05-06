@@ -24,7 +24,7 @@ func ReqTask(host, action, token, body string) any {
 %s
 ===== BODY =====
 %s
-===== =====
+===== RESPONSE =====
 
 `
 
@@ -52,7 +52,6 @@ func ReqTask(host, action, token, body string) any {
 	// err = json.Indent(&pretty_json, output, "", "  ")
 
 	fmt.Printf("\nBeforeJSON:\n%s\n", string(output))
-	log_msg += string(output)
 
 	var data any
 	err = json.Unmarshal(output, &data)
@@ -67,6 +66,7 @@ func ReqTask(host, action, token, body string) any {
 	}
 	fmt.Println("\nResponse:")
 	fmt.Println(string(content))
+	log_msg += string(content)
 
 	return data
 }
