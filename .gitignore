@@ -1,1 +1,7 @@
 /dist
+
+# 排除依賴與大型資料夾
+vendor/
+node_modules/
+.idea/
+.vscode/
